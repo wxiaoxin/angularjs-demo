@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="xxApp">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/angular.js"></script>
+    <script src="js/1.js"></script>
+</head>
+
+<body ng-controller="xxCtrl">
+
+
+    <h2>模型绑定：<span class="r">ng-model="变量名"</span></h2>
+
+    <form name="xxForm">
+
+        姓名: <input type="text" ng-model="username">
+        <p>欢迎： <span class="r">{{username}}</span></p>
+
+        邮箱： <input type="email" name="address" ng-model="adderss">
+        <span ng-show="xxForm.address.$error.email" class="r">邮件地址有误</span>
+
+        <br>
+        <br> 
+        
+        状态： <input type="email" name="address2" ng-model="address2"> <br>
+        <p>xxForm.address2.$valid = <span class="r"> {{xxForm.address2.$valid}} </span></p>
+        <p>xxForm.address2.$dirty = <span class="r"> {{xxForm.address2.$dirty}} </span></p>
+        <p>xxForm.address2.$touched = <span class="r"> {{xxForm.address2.$touched}} </span></p>
+
+        <br>
+        <button type="submit" onclick="getFirstName()">验证双向绑定</button>
+
+    </form>
+
+
+    <h2>取值</h2>
+
+    {{firstName + " " + lastName}}
+
+    <h2>遍历数组</h2>
+
+    <ul>
+        <li ng-repeat="person in persons">
+            {{person.firstName + " · " + person.lastName}}
+        </li>
+    </ul>
+
+    <h2>自定义指令</h2>
+
+    <!-- 以标签元素的形式调用自定义指令 -->
+    <xin></xin>
+
+    <!-- 通过属性的形式调用自定义指令 -->
+    <div xin></div>
+
+    <!-- 通过类名的形式调用自定义指令 -->
+    <div class="xin"></div>
+
+    <!-- 通过注释的形式调用自定义指令 -->
+    <!-- 指令:xin -->
+
+</body>
+
+</html>

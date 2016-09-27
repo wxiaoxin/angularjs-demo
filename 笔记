@@ -1,0 +1,51 @@
+AngularJS是一个JavaScript框架，通过指令扩展了HTML，且通过表达式绑定数据到HTML
+
+
+基础概念：
+模块 Module：定义了一个AngularJS应用
+控制器 Controller：定义AngularJS应用中的控制器，ng-controller绑定到HTML中
+
+
+ng-app 定义了一个AngularJS应用程序,标记了AngularJS脚本的作用域
+
+ng-module 把元素值绑定到应用程序的变量中
+
+ng-bind 把应用程序数据绑定到HTML视图
+
+
+AngularJS表达式：{{expression}} 用于将数据绑定到HTML中，与ng-bind相似
+
+
+
+ng-init 初始化AngularJS应用程序变量，如：
+<body ng-app ng-init="username='未知'"></div>
+
+
+
+// 声明Angular模块
+var m = angular.module("模块名称", [依赖]);
+
+// 声明模块下的控制器
+m.controller("控制器名称", function($scope){
+    // 声明变量
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
+
+    // 方法
+    $scope.getFirstName = function() {
+        console.log($scope.firstName);
+    };  
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
